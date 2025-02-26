@@ -49,6 +49,8 @@
                             </x-dropdown-link>
                         </form>
                     </x-slot>
+
+                    <a href="{{ route('agent.apply') }}">Agent Center</a>
                 </x-dropdown>
             </div>
 

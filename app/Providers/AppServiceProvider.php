@@ -6,6 +6,10 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    protected $policies = [
+        Chat::class => ChatPolicy::class,
+    ];
+    
     /**
      * Register any application services.
      */

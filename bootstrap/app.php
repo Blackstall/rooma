@@ -11,7 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'chat.participant' => \App\Http\Middleware\EnsureUserIsChatParticipant::class,
+            'approved.agent' => \App\Http\Middleware\IsApprovedAgent::class,
+            'admin' => \App\Http\Middleware\IsAdmin::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
